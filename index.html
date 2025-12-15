@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Auto Scroll</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<main>
+			<section class="clients">
+				<h2>Trusted by more than 20000+ users</h2>
+
+				<div class="clients-slider">
+					<div class="clients-track">
+						<div class="clients-slide">
+							<img src="./assets/users/google-pay.png" />
+						</div>
+						<div class="clients-slide"><img src="./assets/users/phonepe.png" /></div>
+						<div class="clients-slide"><img src="./assets/users/razorpay.png" /></div>
+						<div class="clients-slide"><img src="./assets/users/hdfc.png" /></div>
+						<div class="clients-slide"><img src="./assets/users/paytm.png" /></div>
+						<div class="clients-slide"><img src="./assets/users/paypal.png" /></div>
+						<div class="clients-slide"><img src="./assets/users/icici.png" /></div>
+						<div class="clients-slide">
+							<img src="./assets/users/bharat-pay.png" />
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+		<script>
+			function cloneSlidesUntilOverflow() {
+				const wrapper = document.querySelector('.clients-track');
+				const slides = Array.from(wrapper.children);
+
+				let totalWidth = wrapper.scrollWidth;
+				const viewportWidth = window.innerWidth;
+
+				// Clone slides until total width comfortably exceeds viewport
+				while (totalWidth < viewportWidth * 2) {
+					slides.forEach((slide) => {
+						const clone = slide.cloneNode(true);
+						wrapper.appendChild(clone);
+					});
+					totalWidth = wrapper.scrollWidth;
+				}
+			}
+		</script>
+
+		<script>
+			window.addEventListener('load', () => {
+				cloneSlidesUntilOverflow(); // clone first
+
+				new Swiper('.clients-slider', {
+					wrapperClass: 'clients-track',
+					slideClass: 'clients-slide',
+
+					loop: true,
+					slidesPerView: 'auto',
+					allowTouchMove: false,
+
+					freeMode: {
+						enabled: true,
+                        sticky: false,
+						momentum: false,
+					},
+
+					autoplay: {
+						delay: 0,
+						disableOnInteraction: false,
+					},
+
+					speed: 4000,
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Auto Scroll</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<main>
+			<section class="clients">
+				<div class="container">
+					<h2>Trusted by more than 20000+ users</h2>
+					<!-- Slider main container -->
+					<div class="swiper">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide"><img src="../assets/users/google-pay.png" alt="" /></div>
+							<div class="swiper-slide"><img src="../assets/users/phonepe.png" alt="" /></div>
+							<div class="swiper-slide"><img src="../assets/users/razorpay.png" alt="" /></div>
+							<div class="swiper-slide"><img src="../assets/users/hdfc.png" alt="" /></div>
+							<div class="swiper-slide"><img src="../assets/users/paytm.png" alt="" /></div>
+							<div class="swiper-slide"><img src="../assets/users/paypal.png" alt="" /></div>
+							<div class="swiper-slide"><img src="../assets/users/icici.png" alt="" /></div>
+							<div class="swiper-slide"><img src="../assets/users/bharat-pay.png" alt="" /></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+		<script>
+			const swiper = new Swiper('.swiper', {
+				loop: true,
+
+			});
+		</script>
+	</body>
+</html>
